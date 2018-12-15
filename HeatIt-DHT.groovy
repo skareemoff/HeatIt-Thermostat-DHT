@@ -91,7 +91,7 @@
            
 }
 metadata {
-	definition (name: "Thermostat", namespace: "HeatIt", author: "") {
+	definition (name: "Thermostat", namespace: "HeatIt", author: "Unknown") {
 		capability "Actuator"
 		capability "Temperature Measurement"
 		capability "Thermostat"
@@ -156,7 +156,7 @@ metadata {
         standardTile("simpleMode", "device.thermostatMode", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
             state "off", label:'OFF', action:"switchMode", nextState:"to_heat", backgroundColor:COLOR_IDLE, icon:"st.Home.home1"
             state "heat", label:'Heating', action:"switchMode", nextState:"energySaveHeat", backgroundColor:COLOR_HEATING, icon:"st.Home.home1"
-            state "energySaveHeat", label: "Eco", action:"switchMode", nextState:"to_heat", backgroundColor:COLOR_ECO, icon:"st.Home.home1"
+            state "energySaveHeat", label: "Eco", action:"switchMode", nextState:"off", backgroundColor:COLOR_ECO, icon:"st.Home.home1"
         }
 
         multiAttributeTile(name:"thermostatMulti", type:"thermostat", width:6, height:4) {
